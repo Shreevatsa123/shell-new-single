@@ -1,0 +1,33 @@
+{
+	"name": "PL_array",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.account_name",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@not(equals(item(),'ccc'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"account_name": {
+				"type": "array",
+				"defaultValue": [
+					"aa",
+					"bb"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
